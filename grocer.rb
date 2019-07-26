@@ -21,7 +21,7 @@ def apply_coupons(cart, coupons)
   coupons.each do |coupon| 
     if cart.key?(coupon[:item]) && cart[coupon[:item]][:count] >= coupon[:num] 
       discounted_item = "#{coupon[:item].upcase} W/COUPON" 
-        if cart[disc_item] 
+        if cart[discounted_item] 
           cart[discounted_item][:count] += coupon[:num] #accounts for if there are more than one coupons, increment coupon count if two are applied 
         else cart[discounted_item] = { 
           price: coupon[:cost] / coupon[:num], 
