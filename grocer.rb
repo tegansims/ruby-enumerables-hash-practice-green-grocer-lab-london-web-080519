@@ -19,6 +19,7 @@ end
 
 def apply_coupons(cart, coupons)
   coupons.each do |coupon| 
+    binding.pry
     if cart.key?(coupon[:item]) && cart[coupon[:item]][:count] >= coupon[:num] 
       disc_item = "#{coupon[:item]} W/COUPON" 
         if cart[disc_item] 
@@ -86,5 +87,5 @@ coupons = [
   {:item => "CHEESE", :num => 3, :cost => 15.00}
 ]
 
-p checkout(cart, coupons)
+apply_coupons(cart, coupons)
  
