@@ -23,7 +23,7 @@ def apply_coupons(cart, coupons)
       discounted_item = "#{coupon[:item].upcase} W/COUPON" 
         if cart[discounted_item] 
           cart[discounted_item][:count] += coupon[:num] 
-          # ^^ increment coupon count if two are applied 
+          # ^^ increments coupon count if two are applied 
         else cart[discounted_item] = { 
           price: coupon[:cost] / coupon[:num], 
           clearance: cart[coupon[:item]][:clearance], 
